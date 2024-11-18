@@ -31,7 +31,7 @@ def num_check(question):
 
             response = int(response)
 
-            if 1 <= response <= 200:
+            if 1 <= response:
                 return response
             else:
                 print(error)
@@ -40,22 +40,34 @@ def num_check(question):
         except ValueError:
             print(error)
 
+
 def factor(var_to_factor):
     factors_list = []
 
     stop = math.sqrt(to_factor)
     stop = int(stop)
 
-    for item in range: 1, 12
+    for item in range(1, stop + 1):
 
-        if to_factor
+        print(f"\nchecking {item}...")
 
-            partner =
+        # check if it's a factor
+        if to_factor % item == 0:
+            # if it's a factor, add it to the list of factors
+            factors_list.append(item)
 
-            if partner
+            # // find the integer value for the 'partner' (eg: 1, 12)
+            partner = to_factor // item
+
+            # check if partner is in the list, if it is not, add it.
+            if partner not in factors_list:
+                factors_list.append(partner)
+
+            print(f"item = {item}, partner = {partner}")
 
     factors_list.sort()
     return factors_list
+
 
 # Main routine goes here
 statement_generator("Factor Finder", "-")
@@ -73,6 +85,7 @@ while True:
     print("you chose to factor", to_factor)
 
     if to_factor == "xxx":
+        print("thank you for using factors calculator")
         break
 
     elif to_factor != 1:
@@ -87,3 +100,6 @@ while True:
 
     elif len(all_factors) % 2 == 1:
         comment = f"{to_factor} is a perfect square"
+
+    print(all_factors)
+    print(comment)
